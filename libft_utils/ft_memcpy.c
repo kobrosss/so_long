@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/15 19:33:54 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/07/22 19:14:06 by rkobelie         ###   ########.fr       */
+/*   Created: 2024/02/28 16:29:28 by rkobeliev         #+#    #+#             */
+/*   Updated: 2024/07/22 21:35:09 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
-void	*ft_calloc(size_t count, size_t size)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	void	*ptr;
-	char	*p;
-	size_t	total_size;
+	unsigned char			*d;
+	const unsigned char		*s;
+	size_t					i;
 
-	p = NULL;
-	total_size = 0;
-	ptr = malloc(count * size);
-	if (ptr != NULL)
+	i = 0;
+	d = (unsigned char *)dest;
+	s = (const unsigned char *)src;
+	while (i < n)
 	{
-		p = ptr;
-		total_size = count * size;
-		while (total_size--)
-			*p++ = 0;
+		d[i] = s[i];
+		i++;
 	}
-	return (ptr);
+	return (dest);
 }

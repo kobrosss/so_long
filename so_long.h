@@ -6,7 +6,7 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/21 18:12:28 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/07/22 23:36:50 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/07/23 17:20:20 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,20 +24,16 @@
 # include <stdbool.h>
 
 
-typedef struct s_list
-{
-	ssize_t bytes;
-    ssize_t  size;
-    char    **map;
-    char    *buffer;
-    char    *new_buffer;
-	struct s_list	*next;
-}				t_map;
 
-
-char   *map_reader(t_map *map, const char *filename);
+size_t	ft_strlen(char *s);
+char	*ft_strjoin(char *s1, char *s2);
+char	*ft_strchr(char *s, int c);
+char	*get_next_line(int fd);
+char	*get_line(char *left_str);
+char	*formatnewline(char *rude_str);
+char	*readnewline(int fd, char *rude_str);
+char   *map_reader(const char *filename);
 char	**ft_split(char const *s, char c);
-void	*ft_realloc(void *ptr, size_t newsize);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 
 #endif
