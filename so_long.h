@@ -6,7 +6,7 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/21 18:12:28 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/07/23 17:20:20 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/07/23 21:11:14 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,9 @@
 # include <stdbool.h>
 
 
-
-size_t	ft_strlen(char *s);
+int   form_validator(size_t lenth, size_t width);
+void	ft_bzero(void *s, size_t n);
+void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strjoin(char *s1, char *s2);
 char	*ft_strchr(char *s, int c);
 char	*get_next_line(int fd);

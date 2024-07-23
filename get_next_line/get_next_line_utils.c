@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rkobeliev <rkobeliev@student.42.fr>        +#+  +:+       +#+        */
+/*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 16:51:57 by rkobeliev         #+#    #+#             */
-/*   Updated: 2024/04/15 18:58:56 by rkobeliev        ###   ########.fr       */
+/*   Updated: 2024/07/23 18:48:06 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-size_t	ft_strlen(char *s)
+const size_t	ft_strlen(char *s)
 {
 	size_t	i;
 
