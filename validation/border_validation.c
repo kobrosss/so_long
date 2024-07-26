@@ -6,13 +6,11 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/26 13:16:53 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/07/26 17:20:47 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/07/26 20:46:58 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
-
-
 
 int	border_validation (char **map)
 {

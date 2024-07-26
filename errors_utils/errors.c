@@ -6,7 +6,7 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/26 13:20:17 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/07/26 17:04:00 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/07/26 20:41:53 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ void exit_error(const char *message)
 
 int error_tablice(char **map, size_t height, char *message)
 {
-	tablice_cleaner(map, height);
 	perror(message);
 	return(-1);
 }

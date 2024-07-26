@@ -6,7 +6,7 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/26 13:44:43 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/07/26 17:21:15 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/07/26 20:49:08 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,7 @@ int main()
 	size_t height = height_searcher(map);
 	form_validator(lenth, height);
 	border_validation(map);
+	tablice_cleaner(map, height);
+
 
 }
