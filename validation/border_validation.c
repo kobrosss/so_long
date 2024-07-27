@@ -6,7 +6,7 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/26 13:16:53 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/07/26 20:46:58 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/07/27 14:51:09 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	border_validation (char **map)
 			if(lenth_i == 0 || lenth_i == height
 				|| height_j == 0 || height_j == lenth)
 				if(map[lenth_i][height_j] != '1')
-					return(error_tablice(map, height_j, "ERROR (border_validtion) The map must be surrounded by walls"));
+					return(errorr("ERROR (border_validtion)"));
 
 		}
 	}

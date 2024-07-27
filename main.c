@@ -6,7 +6,7 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/26 13:44:43 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/07/26 20:49:08 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/07/27 14:48:30 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "validation/border_validation.c"
 #include "validation/form_validation.c"
 #include "validation/map_reader.c"
+#include "validation/C_P_E_validation.c"
 #include "libft_utils/ft_bzero.c"
 #include "libft_utils/ft_calloc.c"
 #include "libft_utils/ft_memcpy.c"
