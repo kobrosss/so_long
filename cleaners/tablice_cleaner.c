@@ -6,21 +6,24 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/26 16:19:01 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/07/26 17:16:16 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/07/28 20:00:09 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-void tablice_cleaner(char **map, size_t height)
+void tablice_cleaner(char **map)
 {
-	int	i;
+	size_t i;
 
-	i = 0;
-	while (i < height)
+	if (map)
 	{
-		free(map[i]);
-		i++;
+		i = 0;
+		while (map[i] != NULL)
+		{
+			free(map[i]);
+			i++;
+		}
+		free(map);
 	}
-	free(map);
 }

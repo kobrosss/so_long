@@ -6,7 +6,7 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/21 18:12:28 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/07/28 04:36:18 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/07/28 20:00:16 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,13 @@
 # include <stdbool.h>
 
 
+int validation(char **map);
 char	*ft_strdup(const char *s);
 bool collecting_validation(char **map_copy);
 void coordinates(char **map, int *player, int *exit);
-void c_p_e_validation(char **map);
+int c_p_e_validation(char **map);
 int	border_validation (char **map);
-void tablice_cleaner(char **map, size_t height);
+void tablice_cleaner(char **map);
 void exit_error(const char *message);
 void exit_error_fd(const char *message, int fd);
 int error_minus_one(char *message);

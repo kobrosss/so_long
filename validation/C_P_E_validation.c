@@ -6,7 +6,7 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/27 14:27:34 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/07/28 04:34:19 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/07/28 20:19:45 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ static char	**copy_map(char **map)
 		map_copy[i] = ft_strdup(map[i]);
 		if (!map_copy[i])
 		{
-			tablice_cleaner(map_copy, height_searcher(map));
 			return (NULL);
 		}
 		i++;
@@ -79,7 +78,7 @@ static void	f_fill(char **map, size_t height, int y, int x)
 	f_fill(map, height, y, x + 1);
 }
 
-void	c_p_e_validation(char **map)
+int	c_p_e_validation(char **map)
 {
 	char	**map_copy;
 	int	player[2];
@@ -89,15 +88,15 @@ void	c_p_e_validation(char **map)
 	map_copy = copy_map(map);
 	if (!map_copy)
 	{
-		tablice_cleaner(map, height_searcher(map));
+		tablice_cleaner(map_copy);
 		exit_error("ERROR(c_p_e_validation): copy error");
 	}
 	coordinates(map_copy, player, NULL);
 	f_fill(map_copy, height, player[0], player[1]);
 	if(!collecting_validation(map_copy))
 	{
-		tablice_cleaner(map_copy, height);
-		exit_error("ERROR(c_p_e_validation): Map isn't valid");
+		error_minus_one("ERROR: (c_p_e_validation): the map isn`t valid");
 	}
-	tablice_cleaner(map_copy, height);
+	tablice_cleaner(map_copy);
+	return (0);
 }

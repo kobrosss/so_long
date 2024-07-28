@@ -6,7 +6,7 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/21 18:12:02 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/07/28 03:59:07 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/07/28 19:18:54 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,13 @@ char *map_reader(const char *filename)
 char	**map_spliter (char *map_str)
 {
     char **map;
+    if (!map_str)
+        return (NULL);
     map = ft_split(map_str, '\n');
+    if (!map)
+    {
+        return NULL;
+    }
     free(map_str);
     return(map);
 }

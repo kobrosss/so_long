@@ -6,7 +6,7 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/26 13:44:43 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/07/28 04:36:57 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/07/28 20:43:52 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include "validation/map_reader.c"
 #include "validation/C_P_E_validation.c"
 #include "validation/collecting_validation.c"
+#include "validation/validation.c"
 #include "libft_utils/ft_bzero.c"
 #include "libft_utils/ft_calloc.c"
 #include "libft_utils/ft_memcpy.c"
@@ -28,12 +29,15 @@
 
 int main()
 {
-	char *map_str = map_reader("mini4.ber");
-	char **map = map_spliter(map_str);
-	size_t lenth = lenth_searcher(map);
-	size_t height = height_searcher(map);
-	form_validator(lenth, height);
-	border_validation(map);
-	c_p_e_validation(map);
-	tablice_cleaner(map, height);
+	char *map_str;
+	char **map;
+
+	map_str = map_reader("mini4.ber");
+	map = map_spliter(map_str);
+	if(validation(map) == -1)
+	{
+		tablice_cleaner(map);
+		exit_error("ERROR(validation): the map isn`t valid");
+	}
+	tablice_cleaner(map);
 }
