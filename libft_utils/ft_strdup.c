@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   errors.c                                           :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/26 13:20:17 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/07/28 03:03:15 by rkobelie         ###   ########.fr       */
+/*   Created: 2024/02/08 15:41:45 by rkobeliev         #+#    #+#             */
+/*   Updated: 2024/07/28 04:36:01 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-void exit_error_fd(const char *message, int fd)
+char	*ft_strdup(const char *s)
 {
-	close(fd);
-	perror(message);
-	exit(0);
-}
+	char	*str;
+	int		i;
 
-void exit_error(const char *message)
-{
-	perror(message);
-	exit(0);
-}
-
-int error_minus_one(char *message)
-{
-	perror(message);
-	return(-1);
+	i = 0;
+	while (s[i])
+		i++;
+	str = (char *)malloc(sizeof(char) * (i + 1));
+	if (str == NULL)
+		return (NULL);
+	i = 0;
+	while (s[i])
+	{
+		str[i] = s[i];
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
 }

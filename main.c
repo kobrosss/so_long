@@ -6,7 +6,7 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/26 13:44:43 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/07/27 14:48:30 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/07/28 04:36:57 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,12 @@
 #include "validation/form_validation.c"
 #include "validation/map_reader.c"
 #include "validation/C_P_E_validation.c"
+#include "validation/collecting_validation.c"
 #include "libft_utils/ft_bzero.c"
 #include "libft_utils/ft_calloc.c"
 #include "libft_utils/ft_memcpy.c"
 #include "libft_utils/ft_split.c"
+#include "libft_utils/ft_strdup.c"
 #include "get_next_line/get_next_line.c"
 #include "get_next_line/get_next_line_utils.c"
 #include "errors_utils/errors.c"
@@ -32,7 +34,6 @@ int main()
 	size_t height = height_searcher(map);
 	form_validator(lenth, height);
 	border_validation(map);
+	c_p_e_validation(map);
 	tablice_cleaner(map, height);
-
-
 }

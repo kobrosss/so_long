@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   errors.c                                           :+:      :+:    :+:   */
+/*   collecting_validation.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/26 13:20:17 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/07/28 03:03:15 by rkobelie         ###   ########.fr       */
+/*   Created: 2024/07/28 03:46:52 by rkobelie          #+#    #+#             */
+/*   Updated: 2024/07/28 03:52:03 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-void exit_error_fd(const char *message, int fd)
+bool collecting_validation(char **map_copy)
 {
-	close(fd);
-	perror(message);
-	exit(0);
-}
+	int	i;
+	int	j;
 
-void exit_error(const char *message)
-{
-	perror(message);
-	exit(0);
-}
-
-int error_minus_one(char *message)
-{
-	perror(message);
-	return(-1);
+	i = 0;
+	j = 0;
+	while (map_copy[i] != NULL)
+	{
+		j = 0;
+		while (map_copy[i][j] != '\0')
+		{
+			if (map_copy[i][j] == 'C' || map_copy[i][j] == 'E')
+				return (false);
+			j++;
+		}
+		i++;
+	}
+	return (true);
 }
