@@ -6,13 +6,13 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 03:46:52 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/07/28 03:52:03 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/08/02 22:20:21 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-bool collecting_validation(char **map_copy)
+bool	collecting_validation(char **map_copy)
 {
 	int	i;
 	int	j;

@@ -13,12 +13,13 @@
 NAME = so_long
 
 SRCS =  $(wildcard cleaners/*.c errors_utils/*.c get_next_line/*.c libft_utils/*.c \
-	validation/*.c mlx/*.c) main.c
+	validation/*.c mlx/*.c ft_printf/*.c) main.c
 
 OBJS = ${SRCS:.c=.o}
 
 LIBS = -lX11 -Lminilibx-linux -lmlx_Linux -lXext
 MINILIBX = minilibx-linux/
+FT_PRINTF = ft_printf/
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -g
@@ -27,6 +28,7 @@ RM = rm -rf
 all: ${NAME}
 ${NAME}: ${OBJS}
 	make -C $(MINILIBX)
+	make -C $(FT_PRINTF)
 	@${CC} ${CFLAGS} ${OBJS} -o ${NAME} ${LIBS}
 
 clean:

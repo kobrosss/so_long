@@ -6,7 +6,7 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/27 14:27:34 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/08/01 21:35:52 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/08/02 22:20:16 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ static void	f_fill(char **map, size_t height, int y, int x)
 
 	length = lenth_searcher(map);
 	if (x < 0 || (x >= (int)length) || y < 0 || (y >= (int)height)
-		|| map[y][x] == '1' || map[y][x] == 'X' || map[y][x] == 'e' )
+		|| map[y][x] == '1' || map[y][x] == 'X' || map[y][x] == 'e')
 		return ;
 	map[y][x] = 'X';
 	f_fill(map, height, y - 1, x);
@@ -81,7 +81,7 @@ static void	f_fill(char **map, size_t height, int y, int x)
 int	c_p_e_validation(char **map)
 {
 	char	**map_copy;
-	int	player[2];
+	int		player[2];
 	size_t	height;
 
 	height = height_searcher(map);
@@ -93,7 +93,7 @@ int	c_p_e_validation(char **map)
 	}
 	coordinates(map_copy, player, NULL);
 	f_fill(map_copy, height, player[0], player[1]);
-	if(!collecting_validation(map_copy))
+	if (!collecting_validation(map_copy))
 	{
 		error_minus_one("ERROR: (c_p_e_validation): the map isn`t valid");
 	}

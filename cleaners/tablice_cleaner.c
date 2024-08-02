@@ -6,15 +6,15 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/26 16:19:01 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/07/28 20:00:09 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/08/02 22:22:16 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-void tablice_cleaner(char **map)
+void	tablice_cleaner(char **map)
 {
-	size_t i;
+	size_t	i;
 
 	if (map)
 	{
