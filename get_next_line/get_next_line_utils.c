@@ -12,7 +12,7 @@
 
 #include "../so_long.h"
 
-const size_t	ft_strlen(char *s)
+size_t	ft_strlen(char *s)
 {
 	size_t	i;
 

@@ -3,36 +3,38 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rkobeliev <rkobeliev@student.42.fr>        +#+  +:+       +#+         #
+#    By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/15 15:12:09 by rkobelie          #+#    #+#              #
-#    Updated: 2024/07/18 18:48:24 by rkobeliev        ###   ########.fr        #
+#    Updated: 2024/08/02 02:07:51 by rkobelie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 
 SRCS =  $(wildcard cleaners/*.c errors_utils/*.c get_next_line/*.c libft_utils/*.c \
-	validation/*.c) main.c
+	validation/*.c mlx/*.c) main.c
 
 OBJS = ${SRCS:.c=.o}
 
+LIBS = -lX11 -Lminilibx-linux -lmlx_Linux -lXext
+MINILIBX = minilibx-linux/
 
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror -Iincludes -g
+CC = cc
+CFLAGS = -Wall -Wextra -Werror -g
 RM = rm -rf
 
-all: ${NAME} ${CHECK}
+all: ${NAME}
 ${NAME}: ${OBJS}
-	@${CC} ${CFLAGS} ${OBJS} -o ${NAME}
+	make -C $(MINILIBX)
+	@${CC} ${CFLAGS} ${OBJS} -o ${NAME} ${LIBS}
 
 clean:
 	@${RM} ${OBJS}
-	@${RM} ${CHECK_OBJS}
 
 fclean: clean
+	make clean -C $(MINILIBX)
 	@${RM} ${NAME}
-	@${RM} ${CHECK}
 
 re: fclean all
 

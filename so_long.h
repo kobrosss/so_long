@@ -6,7 +6,7 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/21 18:12:28 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/07/30 02:59:54 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/08/02 01:51:44 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,11 @@
 # include <string.h>
 # include <fcntl.h>
 # include <stdbool.h>
+# include "minilibx-linux/mlx.h"
 
 typedef struct s_textures
 {
-	void	*backgrnd;
+	void	*floor;
 	void	*wall;
 	void	*coin;
 	void	*player;
@@ -35,11 +36,10 @@ typedef struct s_textures
 
 typedef	struct s_init_game
 {
-	int	width;
+	int	lenght;
 	int	height;
 	int	player_pos[2];
 	int	exit_pos[2];
-	int	enemy_pos;
 	char	**map;
 	void	*window;
 	void	*mlx;
@@ -47,13 +47,20 @@ typedef	struct s_init_game
 }	t_init_game;
 
 
-size_t	height_searcher(char **map);
-size_t	lenth_searcher(char **map);
+int	height_searcher(char **map);
+int	lenth_searcher(char **map);
+size_t	ft_strlen(char *s);
 int	validation(char **map);
 int	c_p_e_validation(char **map);
 int	border_validation (char **map);
 int	error_minus_one(char *message);
-int	form_validator(size_t lenth, size_t hight);
+int	free_game(t_init_game *game);
+int	form_validator(int lenth, int hight);
+int	button_events(int keycode,t_init_game *game);
+int	free_game(t_init_game *game);
+void	init_game(t_init_game game);
+void	put_textures(t_init_game game);
+void	moves(t_init_game *game, int x, int y);
 bool	collecting_validation(char **map_copy);
 void	coordinates(char **map, int *player, int *exit);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
@@ -70,5 +77,6 @@ char	*get_line(char *left_str);
 char	*formatnewline(char *rude_str);
 char	*readnewline(int fd, char *rude_str);
 char	*map_reader(const char *filename);
+char	**map_spliter (char *map_str);
 char	**ft_split(char const *s, char c);
 #endif

@@ -32,5 +32,6 @@ int	border_validation(char **map) {
 		}
 		length_i++;
 	}
+	return (0);
 }
 

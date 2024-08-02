@@ -6,13 +6,13 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 18:28:40 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/07/28 20:33:06 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/08/02 00:39:46 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-size_t  lenth_searcher(char **map)
+int  lenth_searcher(char **map)
 {
     size_t lenth;
 
@@ -22,7 +22,7 @@ size_t  lenth_searcher(char **map)
     return(lenth);
 }
 
-size_t  height_searcher(char **map)
+int  height_searcher(char **map)
 {
     size_t height;
 
@@ -32,7 +32,7 @@ size_t  height_searcher(char **map)
     return(height);
 }
 
-int form_validator(size_t lenth, size_t hight)
+int form_validator(int lenth, int hight)
 {
     if (lenth == hight)
         return(-1);

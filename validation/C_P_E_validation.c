@@ -6,7 +6,7 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/27 14:27:34 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/07/30 02:48:34 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/08/01 21:35:52 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,8 @@ static void	f_fill(char **map, size_t height, int y, int x)
 	size_t	length;
 
 	length = lenth_searcher(map);
-	if (x < 0 || x >= (int)length || y < 0 || y >= (int)height
-		| map[y][x] == '1' || map[y][x] == 'X' || map[y][x] == 'e' )
+	if (x < 0 || (x >= (int)length) || y < 0 || (y >= (int)height)
+		|| map[y][x] == '1' || map[y][x] == 'X' || map[y][x] == 'e' )
 		return ;
 	map[y][x] = 'X';
 	f_fill(map, height, y - 1, x);
