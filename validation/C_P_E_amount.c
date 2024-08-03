@@ -6,7 +6,7 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 02:02:14 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/08/03 18:10:08 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/08/03 18:29:00 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,35 @@ static int	c_amount(char **map)
 	return (0);
 }
 
+static int	filtr_bad_value(char **map)
+{
+	int	i;
+	int	j;
+	int	b;
+
+	i = 0;
+	b = 0;
+	while (map[i])
+	{
+		j = 0;
+		while (map[i][j])
+		{
+			if (map[i][j] != 'C' && map[i][j] != 'P' && map[i][j] != '0' &&
+				map[i][j] != '1' && map[i][j] != 'E')
+				b++;
+			j++;
+		}
+		i++;
+	}
+	if (b > 0)
+		return (-1);
+	return (0);
+}
+
 int	c_p_e_amount(char **map)
 {
-	if (c_amount(map) == -1 || p_e_amount(map) == -1)
+	if (c_amount(map) == -1 || p_e_amount(map) == -1 ||
+		filtr_bad_value(map) == -1)
 		return (-1);
 	return (0);
 }
