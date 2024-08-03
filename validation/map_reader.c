@@ -6,7 +6,7 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/21 18:12:02 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/08/02 22:20:37 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/08/03 02:21:19 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ char	*map_reader(const char *filename)
 
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
-		exit_error_fd("ERROR(map_reader): failed to open file.", fd);
+		exit_e("ERROR(map_reader): failed to open file.", fd);
 	map_str = get_next_line(fd);
 	if (map_str == NULL)
-		exit_error_fd("ERROR(map_reader): map empty.", fd);
+		exit_e("ERROR(map_reader): map empty.", fd);
 	line = get_next_line(fd);
 	while (line)
 	{

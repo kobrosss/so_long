@@ -6,7 +6,7 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/26 13:16:53 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/08/02 22:07:27 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/08/02 22:57:34 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ int	border_validation(char **map)
 	size_t	length_i;
 	size_t	height_j;
 
-	length = lenth_searcher(map);
-	height = height_searcher(map);
+	length = lenth_searcher(map) -1;
+	height = height_searcher(map) -1;
 	length_i = 0;
 	while (map[length_i])
 	{

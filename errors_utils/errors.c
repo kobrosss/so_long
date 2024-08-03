@@ -6,7 +6,7 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/26 13:20:17 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/08/02 22:07:47 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/08/03 02:20:48 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,5 @@ void	exit_error_fd(const char *message, int fd)
 void	exit_error(const char *message)
 {
 	perror(message);
-	exit(0);
-}
-
-int	error_minus_one(char *message)
-{
-	perror(message);
-	return (-1);
+	exit(EXIT_FAILURE);
 }

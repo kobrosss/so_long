@@ -1,30 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   validation.c                                       :+:      :+:    :+:   */
+/*   P_E_amount.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/28 15:56:16 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/08/02 22:55:01 by rkobelie         ###   ########.fr       */
+/*   Created: 2024/08/03 02:02:14 by rkobelie          #+#    #+#             */
+/*   Updated: 2024/08/03 02:17:41 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-int	validation(char **map)
+int	p_e_amount(char **map)
 {
-	size_t	lenth;
-	size_t	height;
+	int	i;
+	int	j;
+	int	p;
+	int	e;
 
-	lenth = lenth_searcher(map);
-	height = height_searcher(map);
-	if (form_validator(lenth, height) == -1)
+	i = 0;
+	p = 0;
+	e = 0;
+	while (map[i])
+	{
+		j = 0;
+		while (map[i][j])
+		{
+			if (map[i][j] == 'P')
+				p++;
+			if (map[i][j] == 'E')
+				e++;
+			j++;
+		}
+		i++;
+	}
+	if (p != 1 || e != 1)
 		return (-1);
-	else if (border_validation(map) == -1)
-		return (-1);
-	else if (c_p_e_validation(map) == -1)
-		return (-1);
-	else
-		return (0);
+	return (0);
 }

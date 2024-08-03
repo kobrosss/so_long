@@ -6,7 +6,7 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/21 18:12:28 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/08/02 22:16:06 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/08/03 02:20:53 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ typedef struct s_init_game
 	int			player_pos[2];
 	int			exit_pos[2];
 	int			step_counter;
+	int			e;
+	int			p;
 	char		**map;
 	void		*window;
 	void		*mlx;
@@ -52,9 +54,9 @@ int				height_searcher(char **map);
 int				lenth_searcher(char **map);
 size_t			ft_strlen(char *s);
 int				validation(char **map);
+int				p_e_amount(char **map);
 int				c_p_e_validation(char **map);
 int				border_validation(char **map);
-int				error_minus_one(char *message);
 int				free_game(t_init_game *game);
 int				form_validator(int lenth, int hight);
 int				button_events(int keycode, t_init_game *game);
