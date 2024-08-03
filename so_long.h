@@ -6,7 +6,7 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/21 18:12:28 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/08/03 18:05:57 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/08/03 18:10:44 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ typedef struct s_init_game
 int				height_searcher(char **map);
 int				lenth_searcher(char **map);
 size_t			ft_strlen(char *s);
-int				c_p_e_amount (char **map);
+int				c_p_e_amount(char **map);
 int				validation(char **map);
 int				c_p_e_validation(char **map);
 int				border_validation(char **map);

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   P_E_amount.c                                       :+:      :+:    :+:   */
+/*   C_P_E_amount.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/03 02:02:14 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/08/03 18:06:21 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/08/03 18:10:08 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static int	p_e_amount(char **map)
 	return (0);
 }
 
-static int	c_amount (char **map)
+static int	c_amount(char **map)
 {
 	int	i;
 	int	j;
@@ -64,11 +64,9 @@ static int	c_amount (char **map)
 	return (0);
 }
 
-int	c_p_e_amount (char **map)
+int	c_p_e_amount(char **map)
 {
-	if (c_amount (map) == -1 ||
-		p_e_amount(map) == -1)
+	if (c_amount(map) == -1 || p_e_amount(map) == -1)
 		return (-1);
 	return (0);
 }
-
