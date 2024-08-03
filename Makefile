@@ -6,7 +6,7 @@
 #    By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/15 15:12:09 by rkobelie          #+#    #+#              #
-#    Updated: 2024/08/03 03:05:14 by rkobelie         ###   ########.fr        #
+#    Updated: 2024/08/03 18:06:47 by rkobelie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ SRCS = cleaners/tablice_cleaner.c errors_utils/errors.c get_next_line/get_next_l
 	libft_utils/ft_memcpy.c libft_utils/ft_split.c libft_utils/ft_strdup.c \
 	validation/border_validation.c validation/collecting_validation.c \
 	validation/C_P_E_validation.c validation/form_validation.c \
-	validation/map_reader.c validation/P_E_amount.c validation/validation.c \
+	validation/map_reader.c validation/C_P_E_amount.c validation/validation.c \
 	mlx/mlx_1.c mlx/mlx_2.c main.c
 
 OBJS = ${SRCS:.c=.o}

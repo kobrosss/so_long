@@ -6,7 +6,7 @@
 /*   By: rkobelie <rkobelie@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/27 14:27:34 by rkobelie          #+#    #+#             */
-/*   Updated: 2024/08/03 02:17:03 by rkobelie         ###   ########.fr       */
+/*   Updated: 2024/08/03 18:05:30 by rkobelie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ int	c_p_e_validation(char **map)
 		tablice_cleaner(map_copy);
 		return (-1);
 	}
-	if (p_e_amount(map_copy) == -1)
+	if (c_p_e_amount(map_copy) == -1)
 	{
 		tablice_cleaner(map_copy);
 		return (-1);
